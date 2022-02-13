@@ -36,11 +36,8 @@ jobs:
         run: flutter build web
 
       - name: Deploy
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: "${{ secrets.GITHUB_TOKEN }}"
-          firebaseServiceAccount: "${{ secrets.FIREBASE_HOSTING_DEV }}"
-          projectId: slide-puzzle-dev
-          target: slide-puzzle-dev-34815
-          expires: 30d
-          channelId: live
+        uses: peaceiris/actions-gh-pages@v2.8.0
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: app
+          PUBLISH_DIR: ./build/web
