@@ -45,7 +45,7 @@ class _ChangeMenuState extends State<Menu> {
           child: Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/menu_back.jpg'),
+                image: AssetImage('assets/images/menu_back.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
