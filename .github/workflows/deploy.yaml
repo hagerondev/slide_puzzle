@@ -21,6 +21,12 @@ jobs:
         with:
           flutter-version: 2.8.0
           channel: stable
+      
+      - name: Upgrade flutter
+        run: flutter upgrade
+      
+      - name: Check flutter
+        run: flutter doctor
 
       - name: Install Dependencies
         run: flutter packages get
