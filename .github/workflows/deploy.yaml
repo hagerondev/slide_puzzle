@@ -6,7 +6,7 @@ on:
       - "lib/**"
       - "pubspec.yaml"
       - "pubspec.lock"
-      - "*"
+      - "**"
     branches:
       - main
 
