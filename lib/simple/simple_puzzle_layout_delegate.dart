@@ -79,10 +79,10 @@ class SimplePuzzleLayoutDelegate extends PuzzleLayoutDelegate {
           child: SizedBox(
             width: 568.99,
             height: 320,
-            child: Image.asset(
-              'assets/images/simple_dash_large.png',
-              key: const Key('simple_puzzle_dash_large'),
-            ),
+            // child: Image.asset(
+            //   'assets/images/simple_dash_large.png',
+            //   key: const Key('simple_puzzle_dash_large'),
+            // ),
           ),
         ),
       ),
@@ -239,6 +239,7 @@ class SimplePuzzleTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //print(PuzzleStatus.complete == status ? 'COMPLETE' : 'NOT COMPLETE');
     return PuzzleTitle(
       key: puzzleTitleKey,
       title: status == PuzzleStatus.complete

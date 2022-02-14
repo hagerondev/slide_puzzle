@@ -1,4 +1,4 @@
-# Puzzle Games for Flutter Puzzle Hack
+# Puzzle Game for Flutter Puzzle Hack
 
 A slide puzzle built for [Flutter Challenge](https://flutterhack.devpost.com/).
 

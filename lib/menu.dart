@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:very_good_slide_puzzle/momotaro/page1.dart';
+import 'package:very_good_slide_puzzle/momotaro/page2.dart';
 import 'package:very_good_slide_puzzle/puzzle/puzzle.dart';
 
 class Button extends StatelessWidget {
@@ -18,7 +20,8 @@ class Button extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute<void>(
-            builder: (context) => const PuzzlePage(),
+            //builder: (context) => const PuzzlePage(),
+            builder: (context) => const Page1(),
           ),
         );
       },
@@ -53,11 +56,11 @@ class _ChangeMenuState extends State<Menu> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Expanded(
-                  child: Container(),
+                const Expanded(
+                  child: SizedBox(),
                 ),
                 Expanded(
-                  child: Container(
+                  child: SizedBox(
                     height: 300,
                     width: 80,
                     child: Padding(
