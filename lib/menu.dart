@@ -29,6 +29,8 @@ class Button extends StatelessWidget {
 }
 
 class Menu extends StatefulWidget {
+  const Menu({Key? key}) : super(key: key);
+
   @override
   _ChangeMenuState createState() => _ChangeMenuState();
 }
@@ -40,36 +42,38 @@ class _ChangeMenuState extends State<Menu> {
       theme: ThemeData.dark(),
       home: Scaffold(
         //appBar: AppBar(title: const Text('Creative Folktales')),
-        body: AspectRatio(
-          aspectRatio: 16 / 9,
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/menu_back.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: Container(),
+        body: Center(
+          child: AspectRatio(
+            aspectRatio: 16 / 9,
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/images/menu_back.jpg'),
+                  fit: BoxFit.cover,
                 ),
-                Expanded(
-                  child: Container(
-                    height: 300,
-                    width: 80,
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 100,
-                        right: 190,
-                        bottom: 80,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Expanded(
+                    child: Container(),
+                  ),
+                  Expanded(
+                    child: Container(
+                      height: 300,
+                      width: 80,
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 100,
+                          right: 190,
+                          bottom: 80,
+                        ),
+                        child: Button(), // 指定されても、Expanded に包まれると無視される
                       ),
-                      child: Button(), // 指定されても、Expanded に包まれると無視される
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
