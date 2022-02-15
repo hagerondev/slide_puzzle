@@ -60,7 +60,9 @@ class PuzzlePage extends StatelessWidget {
           create: (context) => ThemeBloc(
             initialThemes: [
               const SimpleTheme(),
+              //const BlueDashatarTheme(),
               context.read<DashatarThemeBloc>().state.theme,
+              //BlueDashatarTheme(),
             ],
           ),
         ),
@@ -89,6 +91,7 @@ class PuzzleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
 
     /// Shuffle only if the current theme is Simple.
     final shufflePuzzle = theme is SimpleTheme;
@@ -110,7 +113,7 @@ class PuzzleView extends StatelessWidget {
                 ),
               ),
               BlocProvider(
-                create: (context) => PuzzleBloc(2)
+                create: (context) => PuzzleBloc(3)
                   ..add(
                     PuzzleInitialized(
                       shufflePuzzle: shufflePuzzle,
@@ -134,6 +137,7 @@ class _Puzzle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     //return Text('_Puzzle');
@@ -151,7 +155,7 @@ class _Puzzle extends StatelessWidget {
                 ),
                 child: Column(
                   children: const [
-                    //PuzzleHeader(),
+                    PuzzleHeader(),
                     PuzzleSections(),
                   ],
                 ),
@@ -233,6 +237,7 @@ class PuzzleLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
 
     return AppFlutterLogo(
       key: puzzleLogoKey,
@@ -253,6 +258,8 @@ class PuzzleSections extends StatelessWidget {
     //return const Text('PuzzleSections');
 
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     return ResponsiveLayoutBuilder(
@@ -271,8 +278,16 @@ class PuzzleSections extends StatelessWidget {
           theme.layoutDelegate.endSectionBuilder(state),
         ],
       ),
-      large: (context, child) => const Center(
+      large: (context, child) => Center(
         child: PuzzleBoard(),
+        // child: Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   children: [
+        //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
+        //     const PuzzleBoard(),
+        //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
+        //   ],
+        // ),
       ),
       //  Row(
       //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +300,7 @@ class PuzzleSections extends StatelessWidget {
       //     //   child: theme.layoutDelegate.endSectionBuilder(state),
       //     // ),
       //   ],
-      // ),
+      // ),)
     );
   }
 }
@@ -314,6 +329,7 @@ class PuzzleBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
     final puzzle = context.select((PuzzleBloc bloc) => bloc.state.puzzle);
 
     final size = puzzle.getDimension();
@@ -358,7 +374,9 @@ class _PuzzleTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    final theme =
+        context.select((ThemeBloc bloc) => bloc.state.theme); //ここでタイルだけ変わる
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     return tile.isWhitespace
@@ -430,6 +448,7 @@ class PuzzleMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentTheme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final currentTheme = BlueDashatarTheme();
     final isCurrentTheme = theme == currentTheme;
 
     return ResponsiveLayoutBuilder(

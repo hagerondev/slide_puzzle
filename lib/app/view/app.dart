@@ -15,7 +15,8 @@ import 'package:http/http.dart' as http;
 import 'package:very_good_slide_puzzle/helpers/helpers.dart';
 import 'package:very_good_slide_puzzle/l10n/l10n.dart';
 import 'package:very_good_slide_puzzle/menu.dart';
-import 'package:very_good_slide_puzzle/momotaro/page1.dart';
+//import 'package:very_good_slide_puzzle/momotaro/page1.dart';
+import 'package:very_good_slide_puzzle/puzzle/view/puzzle_page.dart';
 
 class App extends StatefulWidget {
   const App({Key? key, ValueGetter<PlatformHelper>? platformHelperFactory})
@@ -183,7 +184,8 @@ class _AppState extends State<App> {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const Menu(), //PuzzlePage(),
+      //home: const Menu(), //PuzzlePage(),
+      home: const PuzzlePage(),
       //home: Page1(),
     );
   }

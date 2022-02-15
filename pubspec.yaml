@@ -36,6 +36,7 @@ flutter:
   assets:
     - assets/audio/
     - assets/images/
+    - assets/images/momotaro
     - assets/images/audio_control/
     - assets/images/dashatar/gallery/
     - assets/images/dashatar/success/

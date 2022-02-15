@@ -74,8 +74,8 @@ class SimplePuzzleLayoutDelegate extends PuzzleLayoutDelegate {
             key: const Key('simple_puzzle_dash_medium'),
           ),
         ),
-        large: (_, __) => Padding(
-          padding: const EdgeInsets.only(bottom: 53),
+        large: (_, __) => const Padding(
+          padding: EdgeInsets.only(bottom: 53),
           child: SizedBox(
             width: 568.99,
             height: 320,
