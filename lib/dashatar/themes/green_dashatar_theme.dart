@@ -12,35 +12,35 @@ class GreenDashatarTheme extends DashatarTheme {
 
   @override
   String semanticsLabel(BuildContext context) =>
-      context.l10n.dashatarGreenDashLabelText;
+      context.l10n.dashatarBlueDashLabelText;
 
   @override
-  Color get backgroundColor => PuzzleColors.greenPrimary;
+  Color get backgroundColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get defaultColor => PuzzleColors.green90;
+  Color get defaultColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get buttonColor => PuzzleColors.green50;
+  Color get buttonColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get menuInactiveColor => PuzzleColors.green50;
+  Color get menuInactiveColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get countdownColor => PuzzleColors.green50;
+  Color get countdownColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  String get themeAsset => 'assets/images/dashatar/gallery/green.png';
+  String get themeAsset => 'assets/images/dashatar/gallery/blue.png';
 
   @override
-  String get successThemeAsset => 'assets/images/dashatar/success/green.png';
+  String get successThemeAsset => 'assets/images/dashatar/success/blue.png';
 
   @override
   String get audioControlOffAsset =>
-      'assets/images/audio_control/green_dashatar_off.png';
+      'assets/images/audio_control/blue_dashatar_off.png';
 
   @override
-  String get audioAsset => 'assets/audio/skateboard.mp3';
+  String get audioAsset => 'assets/audio/dumbbell.mp3';
 
   @override
   String get dashAssetsDirectory => 'assets/images/dashatar/green';

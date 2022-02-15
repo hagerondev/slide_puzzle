@@ -12,35 +12,35 @@ class YellowDashatarTheme extends DashatarTheme {
 
   @override
   String semanticsLabel(BuildContext context) =>
-      context.l10n.dashatarYellowDashLabelText;
+      context.l10n.dashatarBlueDashLabelText;
 
   @override
-  Color get backgroundColor => PuzzleColors.yellowPrimary;
+  Color get backgroundColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get defaultColor => PuzzleColors.yellow90;
+  Color get defaultColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get buttonColor => PuzzleColors.yellow50;
+  Color get buttonColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get menuInactiveColor => PuzzleColors.yellow50;
+  Color get menuInactiveColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get countdownColor => PuzzleColors.yellow50;
+  Color get countdownColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
   String get themeAsset => 'assets/images/dashatar/gallery/yellow.png';
 
   @override
-  String get successThemeAsset => 'assets/images/dashatar/success/yellow.png';
+  String get successThemeAsset => 'assets/images/dashatar/success/blue.png';
 
   @override
   String get audioControlOffAsset =>
       'assets/images/audio_control/yellow_dashatar_off.png';
 
   @override
-  String get audioAsset => 'assets/audio/sandwich.mp3';
+  String get audioAsset => 'assets/audio/dumbbell.mp3';
 
   @override
   String get dashAssetsDirectory => 'assets/images/dashatar/yellow';

@@ -15,19 +15,19 @@ class BlueDashatarTheme extends DashatarTheme {
       context.l10n.dashatarBlueDashLabelText;
 
   @override
-  Color get backgroundColor => PuzzleColors.bluePrimary;
+  Color get backgroundColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get defaultColor => PuzzleColors.blue90;
+  Color get defaultColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get buttonColor => PuzzleColors.blue50;
+  Color get buttonColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get menuInactiveColor => PuzzleColors.blue50;
+  Color get menuInactiveColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
-  Color get countdownColor => PuzzleColors.blue50;
+  Color get countdownColor => Color.fromARGB(255, 255, 255, 255);
 
   @override
   String get themeAsset => 'assets/images/dashatar/gallery/blue.png';

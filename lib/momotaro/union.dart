@@ -22,7 +22,7 @@ class Union1 extends StatelessWidget {
         Expanded(
           child: Center(
             child: Padding(
-              padding: EdgeInsets.all(30),
+              padding: EdgeInsets.all(60),
               child: Page1(),
             ),
           ),

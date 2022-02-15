@@ -155,7 +155,7 @@ class _Puzzle extends StatelessWidget {
                 ),
                 child: Column(
                   children: const [
-                    PuzzleHeader(),
+                    //PuzzleHeader(),
                     PuzzleSections(),
                   ],
                 ),
@@ -255,6 +255,18 @@ class PuzzleSections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<ThemeBloc>().add(ThemeChanged(themeIndex: 1));
+    context.read<DashatarThemeBloc>().add(DashatarThemeChanged(themeIndex: 1));
+
+    ///tile
+    // Reset the timer of the currently running puzzle.
+    context.read<TimerBloc>().add(const TimerReset());
+
+    // Stop the Dashatar countdown if it has been started.
+    context.read<DashatarPuzzleBloc>().add(
+          const DashatarCountdownStopped(),
+        );
+
     //return const Text('PuzzleSections');
 
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
@@ -328,6 +340,7 @@ class PuzzleBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('aaaaaaaaa');
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
     //final theme = BlueDashatarTheme();
     final puzzle = context.select((PuzzleBloc bloc) => bloc.state.puzzle);
