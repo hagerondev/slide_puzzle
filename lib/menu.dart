@@ -57,7 +57,7 @@ class AppIcon extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: Center(
             child: Image.asset(
-              'images/momotaro/momo.png',
+              'assets/images/momotaro/momo.png',
               //'assets/images/timer_icon.png',
             ),
           ),
