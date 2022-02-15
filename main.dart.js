@@ -62964,7 +62964,7 @@ $0(){return B.Cw},
 $S:432}
 A.D1.prototype={
 C(a,b){var s=null,r=A.ayO(B.zj),q=A.ajT(10)
-return A.zt(A.kU(s,new A.bA(B.Hb,A.fL(A.bt("images/momotaro/momo.png",s,s,s,s,s),s,s),s),B.H,s,s,new A.dP(B.zj,s,r,q,s,s,B.as),s,200,s,s,s,s,200),new A.U1(b),s)}}
+return A.zt(A.kU(s,new A.bA(B.Hb,A.fL(A.bt("assets/images/momotaro/momo.png",s,s,s,s,s),s,s),s),B.H,s,s,new A.dP(B.zj,s,r,q,s,s,B.as),s,200,s,s,s,s,200),new A.U1(b),s)}}
 A.U1.prototype={
 $0(){var s=A.Ic(new A.U0(),null,t.H)
 A.xC(this.a,!1).kX(s)},
@@ -63620,22 +63620,22 @@ A.qT.prototype={
 C(a,b){return B.a2O}}
 A.Lk.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/mochi.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/mochi.png",s,s,s,s,s)}}
 A.Ll.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/momo.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/momo.png",s,s,s,s,s)}}
 A.Lm.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/mochi.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/mochi.png",s,s,s,s,s)}}
 A.Ln.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/mochi.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/mochi.png",s,s,s,s,s)}}
 A.Lo.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/mochi.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/mochi.png",s,s,s,s,s)}}
 A.Lp.prototype={
 C(a,b){var s=null
-return A.bt("images/momotaro/mochi.png",s,s,s,s,s)}}
+return A.bt("assets/images/momotaro/mochi.png",s,s,s,s,s)}}
 A.tq.prototype={
 C(a,b){return A.fn(B.Je,B.F,null,B.K,B.A,null)}}
 A.tr.prototype={
