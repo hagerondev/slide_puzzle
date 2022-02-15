@@ -12,7 +12,7 @@ import 'package:very_good_slide_puzzle/timer/timer.dart';
 abstract class _BoardSize {
   static double small = 312;
   static double medium = 424;
-  static double large = 472;
+  static double large = 360; //ボードサイズ
 }
 
 /// {@template dashatar_puzzle_board}
@@ -48,6 +48,7 @@ class _DashatarPuzzleBoardState extends State<DashatarPuzzleBoard> {
         if (state.puzzleStatus == PuzzleStatus.complete) {
           _completePuzzleTimer =
               Timer(const Duration(milliseconds: 370), () async {
+            return;
             await showAppDialog<void>(
               context: context,
               child: MultiBlocProvider(

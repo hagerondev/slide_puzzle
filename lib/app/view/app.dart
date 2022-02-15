@@ -184,8 +184,8 @@ class _AppState extends State<App> {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      //home: const Menu(), //PuzzlePage(),
-      home: const PuzzlePage(),
+      home: const Menu(), //PuzzlePage(),
+      //home: const PuzzlePage(),
       //home: Page1(),
     );
   }

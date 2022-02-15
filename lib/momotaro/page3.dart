@@ -16,6 +16,9 @@ import 'package:very_good_slide_puzzle/timer/timer.dart';
 import 'package:very_good_slide_puzzle/typography/typography.dart';
 import 'dart:async';
 
+const IMAGE_TYPE = 2;
+const NEXT_PAGE = Page4();
+
 /// {@template puzzle_page}
 /// The root page of the puzzle UI.
 ///
@@ -60,7 +63,9 @@ class PuzzlePage extends StatelessWidget {
           create: (context) => ThemeBloc(
             initialThemes: [
               const SimpleTheme(),
+              //const BlueDashatarTheme(),
               context.read<DashatarThemeBloc>().state.theme,
+              //BlueDashatarTheme(),
             ],
           ),
         ),
@@ -89,6 +94,7 @@ class PuzzleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
 
     /// Shuffle only if the current theme is Simple.
     final shufflePuzzle = theme is SimpleTheme;
@@ -110,7 +116,7 @@ class PuzzleView extends StatelessWidget {
                 ),
               ),
               BlocProvider(
-                create: (context) => PuzzleBloc(2)
+                create: (context) => PuzzleBloc(3)
                   ..add(
                     PuzzleInitialized(
                       shufflePuzzle: shufflePuzzle,
@@ -134,6 +140,7 @@ class _Puzzle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     //return Text('_Puzzle');
@@ -233,6 +240,7 @@ class PuzzleLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
 
     return AppFlutterLogo(
       key: puzzleLogoKey,
@@ -250,9 +258,29 @@ class PuzzleSections extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    context.read<ThemeBloc>().add(ThemeChanged(themeIndex: 1));
+    context
+        .read<DashatarThemeBloc>()
+        .add(DashatarThemeChanged(themeIndex: IMAGE_TYPE));
+    // context.read<TimerBloc>().add(const TimerStarted());
+    // context.read<PuzzleBloc>().add(
+    //       const PuzzleInitialized(shufflePuzzle: false),
+    //     );
+
+    ///tile
+    // Reset the timer of the currently running puzzle.
+    context.read<TimerBloc>().add(const TimerReset());
+
+    // Stop the Dashatar countdown if it has been started.
+    context.read<DashatarPuzzleBloc>().add(
+          const DashatarCountdownStopped(),
+        );
+
     //return const Text('PuzzleSections');
 
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     return ResponsiveLayoutBuilder(
@@ -271,8 +299,16 @@ class PuzzleSections extends StatelessWidget {
           theme.layoutDelegate.endSectionBuilder(state),
         ],
       ),
-      large: (context, child) => const Center(
+      large: (context, child) => Center(
         child: PuzzleBoard(),
+        // child: Row(
+        //   crossAxisAlignment: CrossAxisAlignment.start,
+        //   children: [
+        //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
+        //     const PuzzleBoard(),
+        //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
+        //   ],
+        // ),
       ),
       //  Row(
       //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -285,7 +321,7 @@ class PuzzleSections extends StatelessWidget {
       //     //   child: theme.layoutDelegate.endSectionBuilder(state),
       //     // ),
       //   ],
-      // ),
+      // ),)
     );
   }
 }
@@ -306,14 +342,16 @@ class PuzzleBoard extends StatelessWidget {
       context,
       MaterialPageRoute<void>(
         //builder: (context) => const PuzzlePage(),
-        builder: (context) => const Page4(),
+        builder: (context) => NEXT_PAGE,
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    print('aaaaaaaaa');
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final theme = BlueDashatarTheme();
     final puzzle = context.select((PuzzleBloc bloc) => bloc.state.puzzle);
 
     final size = puzzle.getDimension();
@@ -358,7 +396,9 @@ class _PuzzleTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    final theme =
+        context.select((ThemeBloc bloc) => bloc.state.theme); //ここでタイルだけ変わる
+    //final theme = BlueDashatarTheme();
     final state = context.select((PuzzleBloc bloc) => bloc.state);
 
     return tile.isWhitespace
@@ -430,6 +470,7 @@ class PuzzleMenuItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final currentTheme = context.select((ThemeBloc bloc) => bloc.state.theme);
+    //final currentTheme = BlueDashatarTheme();
     final isCurrentTheme = theme == currentTheme;
 
     return ResponsiveLayoutBuilder(

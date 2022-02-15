@@ -68,7 +68,7 @@ class DashatarPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
       child: ResponsiveLayoutBuilder(
         small: (_, child) => const SizedBox(),
         medium: (_, child) => const SizedBox(),
-        large: (_, child) => const DashatarThemePicker(),
+        large: (_, child) => const SizedBox(), //DashatarThemePicker(),
       ),
     );
   }

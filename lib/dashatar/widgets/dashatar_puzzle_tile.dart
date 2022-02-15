@@ -15,7 +15,7 @@ import 'package:very_good_slide_puzzle/theme/themes/themes.dart';
 abstract class _TileSize {
   static double small = 75;
   static double medium = 100;
-  static double large = 112;
+  static double large = 113; //タイルサイズ
 }
 
 /// {@template dashatar_puzzle_tile}
@@ -92,7 +92,8 @@ class DashatarPuzzleTileState extends State<DashatarPuzzleTile>
     final theme = context.select((DashatarThemeBloc bloc) => bloc.state.theme);
     final status =
         context.select((DashatarPuzzleBloc bloc) => bloc.state.status);
-    final hasStarted = status == DashatarPuzzleStatus.started;
+    //final hasStarted = status == DashatarPuzzleStatus.started; //うごいた
+    final hasStarted = true;
     final puzzleIncomplete =
         context.select((PuzzleBloc bloc) => bloc.state.puzzleStatus) ==
             PuzzleStatus.incomplete;

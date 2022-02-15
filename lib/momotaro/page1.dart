@@ -9,12 +9,16 @@ import 'package:very_good_slide_puzzle/l10n/l10n.dart';
 import 'package:very_good_slide_puzzle/layout/layout.dart';
 import 'package:very_good_slide_puzzle/models/models.dart';
 import 'package:very_good_slide_puzzle/momotaro/page2.dart';
+import 'package:very_good_slide_puzzle/momotaro/union2.dart';
 import 'package:very_good_slide_puzzle/puzzle/puzzle.dart';
 import 'package:very_good_slide_puzzle/simple/simple.dart';
 import 'package:very_good_slide_puzzle/theme/theme.dart';
 import 'package:very_good_slide_puzzle/timer/timer.dart';
 import 'package:very_good_slide_puzzle/typography/typography.dart';
 import 'dart:async';
+
+const IMAGE_TYPE = 0;
+const NEXT_PAGE = Union2();
 
 /// {@template puzzle_page}
 /// The root page of the puzzle UI.
@@ -156,7 +160,9 @@ class _Puzzle extends StatelessWidget {
                 child: Column(
                   children: const [
                     //PuzzleHeader(),
-                    PuzzleSections(),
+                    SizedBox(
+                      child: PuzzleSections(),
+                    ),
                   ],
                 ),
               ),
@@ -181,7 +187,7 @@ class PuzzleHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 96,
+      height: 0,
       child: ResponsiveLayoutBuilder(
         small: (context, child) => Stack(
           children: [
@@ -256,7 +262,13 @@ class PuzzleSections extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<ThemeBloc>().add(ThemeChanged(themeIndex: 1));
-    context.read<DashatarThemeBloc>().add(DashatarThemeChanged(themeIndex: 1));
+    context
+        .read<DashatarThemeBloc>()
+        .add(DashatarThemeChanged(themeIndex: IMAGE_TYPE));
+    // context.read<TimerBloc>().add(const TimerStarted());
+    // context.read<PuzzleBloc>().add(
+    //       const PuzzleInitialized(shufflePuzzle: false),
+    //     );
 
     ///tile
     // Reset the timer of the currently running puzzle.
@@ -291,7 +303,9 @@ class PuzzleSections extends StatelessWidget {
         ],
       ),
       large: (context, child) => Center(
-        child: PuzzleBoard(),
+        child: SizedBox(
+          child: PuzzleBoard(),
+        ),
         // child: Row(
         //   crossAxisAlignment: CrossAxisAlignment.start,
         //   children: [
@@ -333,7 +347,7 @@ class PuzzleBoard extends StatelessWidget {
       context,
       MaterialPageRoute<void>(
         //builder: (context) => const PuzzlePage(),
-        builder: (context) => const Page2(),
+        builder: (context) => NEXT_PAGE,
       ),
     );
   }
@@ -469,7 +483,7 @@ class PuzzleMenuItem extends StatelessWidget {
         children: [
           Container(
             width: 100,
-            height: 40,
+            height: 0,
             decoration: isCurrentTheme
                 ? BoxDecoration(
                     border: Border(

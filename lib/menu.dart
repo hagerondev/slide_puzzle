@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:very_good_slide_puzzle/momotaro/page1.dart';
-import 'package:very_good_slide_puzzle/momotaro/page2.dart';
-import 'package:very_good_slide_puzzle/momotaro/union.dart';
+
+import 'package:very_good_slide_puzzle/momotaro/union1.dart';
 import 'package:very_good_slide_puzzle/puzzle/puzzle.dart';
 
 class Button extends StatelessWidget {
