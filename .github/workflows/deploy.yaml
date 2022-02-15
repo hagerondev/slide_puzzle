@@ -41,3 +41,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: app
           PUBLISH_DIR: ./build/web
+          cname: puzzle.hageron.com
