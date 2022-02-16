@@ -15,6 +15,7 @@ import 'package:http/http.dart' as http;
 import 'package:very_good_slide_puzzle/helpers/helpers.dart';
 import 'package:very_good_slide_puzzle/l10n/l10n.dart';
 import 'package:very_good_slide_puzzle/menu.dart';
+import 'package:very_good_slide_puzzle/momotaro/audio.dart';
 //import 'package:very_good_slide_puzzle/momotaro/page1.dart';
 import 'package:very_good_slide_puzzle/puzzle/view/puzzle_page.dart';
 
@@ -50,6 +51,12 @@ class _AppState extends State<App> {
     'assets/audio/skateboard.mp3',
     'assets/audio/success.mp3',
     'assets/audio/tile_move.mp3',
+    'assets/audio/a1.mp3',
+    'assets/audio/a2.mp3',
+    'assets/audio/a3.mp3',
+    'assets/audio/a4.mp3',
+    'assets/audio/a5.mp3',
+    'assets/audio/a6.mp3',
   ];
 
   late final PlatformHelper _platformHelper;
@@ -178,6 +185,7 @@ class _AppState extends State<App> {
         colorScheme: ColorScheme.fromSwatch(
           accentColor: const Color(0xFF13B9FF),
         ),
+        //scaffoldBackgroundColor: Color.fromARGB(255, 235, 235, 235),
       ),
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -185,6 +193,7 @@ class _AppState extends State<App> {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: const Menu(), //PuzzlePage(),
+
       //home: const PuzzlePage(),
       //home: const Union1(),
     );

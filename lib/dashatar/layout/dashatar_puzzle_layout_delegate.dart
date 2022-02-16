@@ -21,7 +21,7 @@ class DashatarPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
         padding: const EdgeInsets.only(left: 50, right: 32),
         child: child,
       ),
-      child: (_) => DashatarStartSection(state: state),
+      child: (_) => SizedBox(), //DashatarStartSection(state: state),
     );
   }
 
@@ -35,8 +35,9 @@ class DashatarPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
           medium: 32,
         ),
         ResponsiveLayoutBuilder(
-          small: (_, child) => const DashatarPuzzleActionButton(),
-          medium: (_, child) => const DashatarPuzzleActionButton(),
+          small: (_, child) => const SizedBox(), //DashatarPuzzleActionButton(),
+          medium: (_, child) =>
+              const SizedBox(), //DashatarPuzzleActionButton(),
           large: (_, __) => const SizedBox(),
         ),
         const ResponsiveGap(
@@ -44,8 +45,8 @@ class DashatarPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
           medium: 54,
         ),
         ResponsiveLayoutBuilder(
-          small: (_, child) => const DashatarThemePicker(),
-          medium: (_, child) => const DashatarThemePicker(),
+          small: (_, child) => const SizedBox(), //DashatarThemePicker(),
+          medium: (_, child) => const SizedBox(), //DashatarThemePicker(),
           large: (_, child) => const SizedBox(),
         ),
         const ResponsiveGap(
@@ -84,7 +85,7 @@ class DashatarPuzzleLayoutDelegate extends PuzzleLayoutDelegate {
           child: ResponsiveLayoutBuilder(
             small: (_, child) => const SizedBox(),
             medium: (_, child) => const SizedBox(),
-            large: (_, child) => const DashatarTimer(),
+            large: (_, child) => const SizedBox(), //DashatarTimer(),
           ),
         ),
         Column(

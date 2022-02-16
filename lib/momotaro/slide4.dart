@@ -6,6 +6,6 @@ class Slide4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //return const PuzzleBoard();
-    return Image.asset('assets/images/momotaro/mochi.png');
+    return Image.asset('assets/images/momotaro/four.png');
   }
 }

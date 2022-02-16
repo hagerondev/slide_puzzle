@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:very_good_slide_puzzle/momotaro/page2.dart';
-import 'package:very_good_slide_puzzle/momotaro/slide3.dart';
-import 'package:very_good_slide_puzzle/momotaro/slide4.dart';
+import 'package:very_good_slide_puzzle/layout/breakpoints.dart';
+import 'package:very_good_slide_puzzle/momotaro/audio.dart';
+import 'package:very_good_slide_puzzle/momotaro/pages.dart';
 
 class Union2 extends StatelessWidget {
   const Union2({Key? key}) : super(key: key);
@@ -9,34 +9,69 @@ class Union2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //return const PuzzleBoard();
-    return Row(
-      children: const [
-        Expanded(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(30),
-              child: Slide3(),
-            ),
+    if (MediaQuery.of(context).size.width <= PuzzleBreakpoints.medium) {
+      //return Puzzles(n: 1);
+      return Container(
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: Colors.blue,
+            width: 10,
           ),
         ),
-        Expanded(
-          child: SizedBox(
-            height: double.infinity,
-            child: Padding(
-              padding: EdgeInsets.only(top: 110),
-              child: Page2(),
-            ),
-          ),
+        child: Slides(
+          n: 3,
+          button: true,
         ),
-        Expanded(
-          child: Center(
-            child: Padding(
-              padding: EdgeInsets.all(30),
-              child: Slide4(),
-            ),
+      );
+    } else {
+      return Stack(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Slides(
+                      n: 3,
+                      button: false,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: SizedBox(
+                  height: double.infinity,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 110),
+                    child: Puzzles(
+                      n: 2,
+                      button: false,
+                    ),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(30),
+                    child: Slides(
+                      n: 4,
+                      button: false,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-      ],
-    );
+          MyHomePage(
+            callback: () {
+              print('Union2 playing');
+            },
+            title: 'b2',
+          ),
+        ],
+      );
+    }
   }
 }
