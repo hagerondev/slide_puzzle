@@ -10,6 +10,8 @@ import 'package:very_good_slide_puzzle/momotaro/slide4.dart';
 import 'package:very_good_slide_puzzle/momotaro/slide5.dart';
 import 'package:very_good_slide_puzzle/momotaro/slide6.dart';
 import 'package:very_good_slide_puzzle/momotaro/slide7.dart';
+import 'package:very_good_slide_puzzle/momotaro/union2.dart';
+import 'package:very_good_slide_puzzle/momotaro/union3.dart';
 
 class NextButton extends StatelessWidget {
   final bool button;
@@ -28,6 +30,7 @@ class NextButton extends StatelessWidget {
         children: [
           TextButton(
             onPressed: () {
+              MyHomePage.playing[0].dispose();
               Navigator.push(
                 context,
                 MaterialPageRoute<void>(
@@ -103,8 +106,11 @@ class StackButton extends StatelessWidget {
 class Puzzles extends StatelessWidget {
   final int n;
   final bool button;
+  final bool isUnion;
 
-  Puzzles({Key? key, required this.n, required this.button}) : super(key: key);
+  Puzzles(
+      {Key? key, required this.n, required this.button, required this.isUnion})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -115,6 +121,7 @@ class Puzzles extends StatelessWidget {
         nextWidget: Slides(
           button: button,
           n: 2,
+          isUnion: isUnion,
         ),
         audiofile: 'a2',
       );
@@ -125,6 +132,7 @@ class Puzzles extends StatelessWidget {
         nextWidget: Slides(
           button: button,
           n: 4,
+          isUnion: isUnion,
         ),
         audiofile: 'a5',
       );
@@ -135,6 +143,7 @@ class Puzzles extends StatelessWidget {
         nextWidget: Slides(
           button: button,
           n: 6,
+          isUnion: isUnion,
         ),
         audiofile: 'a8',
       );
@@ -152,8 +161,11 @@ class Puzzles extends StatelessWidget {
 class Slides extends StatelessWidget {
   final int n;
   final bool button;
+  final bool isUnion;
 
-  Slides({Key? key, required this.n, required this.button}) : super(key: key);
+  Slides(
+      {Key? key, required this.n, required this.button, required this.isUnion})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -164,19 +176,30 @@ class Slides extends StatelessWidget {
         nextWidget: Puzzles(
           button: button,
           n: 1,
+          isUnion: isUnion,
         ),
         audiofile: 'a1',
       );
     } else if (n == 2) {
-      return StackButton(
-        cont: Slide2(),
-        button: button,
-        nextWidget: Slides(
+      if (isUnion) {
+        return StackButton(
+          cont: Slide2(),
           button: button,
-          n: 3,
-        ),
-        audiofile: 'a3',
-      );
+          nextWidget: Union2(),
+          audiofile: 'a3',
+        );
+      } else {
+        return StackButton(
+          cont: Slide2(),
+          button: button,
+          nextWidget: Slides(
+            button: button,
+            n: 3,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a3',
+        );
+      }
     } else if (n == 3) {
       return StackButton(
         cont: Slide3(),
@@ -184,19 +207,30 @@ class Slides extends StatelessWidget {
         nextWidget: Puzzles(
           button: button,
           n: 2,
+          isUnion: isUnion,
         ),
         audiofile: 'a4',
       );
     } else if (n == 4) {
-      return StackButton(
-        cont: Slide4(),
-        button: button,
-        nextWidget: Slides(
+      if (isUnion) {
+        return StackButton(
+          cont: Slide4(),
           button: button,
-          n: 5,
-        ),
-        audiofile: 'a6',
-      );
+          nextWidget: Union3(),
+          audiofile: 'a6',
+        );
+      } else {
+        return StackButton(
+          cont: Slide4(),
+          button: button,
+          nextWidget: Slides(
+            button: button,
+            n: 5,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a6',
+        );
+      }
     } else if (n == 5) {
       return StackButton(
         cont: Slide5(),
@@ -204,6 +238,7 @@ class Slides extends StatelessWidget {
         nextWidget: Puzzles(
           button: button,
           n: 3,
+          isUnion: isUnion,
         ),
         audiofile: 'a7',
       );
@@ -214,6 +249,7 @@ class Slides extends StatelessWidget {
         nextWidget: Puzzles(
           button: button,
           n: 4,
+          isUnion: isUnion,
         ),
         audiofile: 'a9',
       );

@@ -21,6 +21,7 @@ class Union3 extends StatelessWidget {
         child: Slides(
           n: 3,
           button: true,
+          isUnion: false,
         ),
       );
     } else {
@@ -35,6 +36,7 @@ class Union3 extends StatelessWidget {
                     child: Slides(
                       n: 5,
                       button: false,
+                      isUnion: true,
                     ),
                   ),
                 ),
@@ -47,6 +49,7 @@ class Union3 extends StatelessWidget {
                     child: Puzzles(
                       n: 3,
                       button: false,
+                      isUnion: true,
                     ),
                   ),
                 ),
@@ -57,7 +60,8 @@ class Union3 extends StatelessWidget {
                     padding: const EdgeInsets.all(30),
                     child: Slides(
                       n: 6,
-                      button: false,
+                      button: true,
+                      isUnion: true,
                     ),
                   ),
                 ),

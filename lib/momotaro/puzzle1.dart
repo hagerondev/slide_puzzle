@@ -358,6 +358,7 @@ class PuzzleBoard extends StatelessWidget {
   const PuzzleBoard({Key? key}) : super(key: key);
 
   Future<void> next_page(BuildContext context) async {
+    return;
     print("next start");
     // ignore: avoid_dynamic_calls
     await Future<void>.delayed(const Duration(seconds: 3));
