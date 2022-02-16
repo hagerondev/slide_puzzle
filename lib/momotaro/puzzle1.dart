@@ -87,14 +87,23 @@ class PuzzlePage extends StatelessWidget {
           create: (_) => AudioControlBloc(),
         ),
       ],
-      child: Container(
-        decoration: BoxDecoration(
-            // border: Border.all(
-            //   color: Color.fromARGB(255, 255, 0, 13),
-            //   width: 30,
-            // ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 150,
+          ),
+          Expanded(
+            child: Container(
+              // decoration: BoxDecoration(
+              //   border: Border.all(
+              //     color: Color.fromARGB(255, 255, 0, 13),
+              //     width: 30,
+              //   ),
+              // ),
+              child: PuzzleView(),
             ),
-        child: PuzzleView(),
+          ),
+        ],
       ),
       //child: const Text('NOOOO'),
     );
@@ -141,7 +150,7 @@ class PuzzleView extends StatelessWidget {
                   ),
               ),
             ],
-            child: const Center(
+            child: Center(
               child: _Puzzle(
                 key: Key('puzzle_view_puzzle'),
               ),
@@ -313,26 +322,18 @@ class PuzzleSections extends StatelessWidget {
           theme.layoutDelegate.endSectionBuilder(state),
         ],
       ),
-      medium: (context, child) => Column(
-        children: [
-          theme.layoutDelegate.startSectionBuilder(state),
-          const PuzzleBoard(),
-          theme.layoutDelegate.endSectionBuilder(state),
-        ],
-      ),
-      large: (context, child) => Center(
-        child: SizedBox(
-          child: PuzzleBoard(),
-        ),
-        // child: Row(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
-        //     const PuzzleBoard(),
-        //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
-        //   ],
-        // ),
-      ),
+      medium: (context, child) => PuzzleBoard(),
+      large: (context, child) => PuzzleBoard(),
+
+      // child: Row(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: [
+      //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
+      //     const PuzzleBoard(),
+      //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
+      //   ],
+      // ),
+
       //  Row(
       //   crossAxisAlignment: CrossAxisAlignment.start,
       //   children: [
@@ -396,7 +397,11 @@ class PuzzleBoard extends StatelessWidget {
           size,
           puzzle.tiles
               .map(
-                (tile) => _PuzzleTile(
+                (tile) =>
+
+                    // decoration: BoxDecoration(
+                    //     border: Border.all(color: Colors.lightGreen)),
+                    _PuzzleTile(
                   key: Key('puzzle_tile_${tile.value.toString()}'),
                   tile: tile,
                 ),

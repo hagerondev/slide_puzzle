@@ -78,7 +78,24 @@ class PuzzlePage extends StatelessWidget {
           create: (_) => AudioControlBloc(),
         ),
       ],
-      child: const PuzzleView(),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 150,
+          ),
+          Expanded(
+            child: Container(
+              // decoration: BoxDecoration(
+              //   border: Border.all(
+              //     color: Color.fromARGB(255, 255, 0, 13),
+              //     width: 30,
+              //   ),
+              // ),
+              child: PuzzleView(),
+            ),
+          ),
+        ],
+      ),
       //child: const Text('NOOOO'),
     );
   }

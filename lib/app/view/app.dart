@@ -16,6 +16,7 @@ import 'package:very_good_slide_puzzle/helpers/helpers.dart';
 import 'package:very_good_slide_puzzle/l10n/l10n.dart';
 import 'package:very_good_slide_puzzle/menu.dart';
 import 'package:very_good_slide_puzzle/momotaro/audio.dart';
+import 'package:very_good_slide_puzzle/momotaro/pages.dart';
 //import 'package:very_good_slide_puzzle/momotaro/page1.dart';
 import 'package:very_good_slide_puzzle/puzzle/view/puzzle_page.dart';
 
@@ -193,6 +194,7 @@ class _AppState extends State<App> {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       home: const Menu(), //PuzzlePage(),
+      //home: Puzzles(n: 1, button: false, isUnion: false),
 
       //home: const PuzzlePage(),
       //home: const Union1(),

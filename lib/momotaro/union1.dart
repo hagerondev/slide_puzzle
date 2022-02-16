@@ -12,12 +12,12 @@ class Union1 extends StatelessWidget {
     if (MediaQuery.of(context).size.width <= PuzzleBreakpoints.medium) {
       //return Puzzles(n: 1);
       return Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: Colors.blue,
-            width: 10,
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   border: Border.all(
+        //     color: Colors.blue,
+        //     width: 10,
+        //   ),
+        // ),
         child: Slides(
           n: 1,
           button: true,
@@ -44,8 +44,7 @@ class Union1 extends StatelessWidget {
               Expanded(
                 child: SizedBox(
                   height: double.infinity,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 110),
+                  child: Center(
                     child: Puzzles(
                       n: 1,
                       button: false,

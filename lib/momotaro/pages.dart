@@ -87,7 +87,10 @@ class StackButton extends StatelessWidget {
           padding: EdgeInsets.all(40),
           child: SizedBox(
             height: double.infinity,
-            child: cont,
+            child: Container(
+              //decoration: BoxDecoration(border: Border.all(color: Colors.red)),
+              child: cont,
+            ),
           ),
         ),
         Padding(
@@ -114,46 +117,90 @@ class Puzzles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (n == 1) {
-      return StackButton(
-        cont: Page1(),
-        button: button,
-        nextWidget: Slides(
+    if (isUnion) {
+      if (n == 1) {
+        return StackButton(
+          cont: Page1(),
           button: button,
-          n: 2,
-          isUnion: isUnion,
-        ),
-        audiofile: 'a2',
-      );
-    } else if (n == 2) {
-      return StackButton(
-        cont: Page2(),
-        button: button,
-        nextWidget: Slides(
+          nextWidget: Slides(
+            button: button,
+            n: 2,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a2',
+        );
+      } else if (n == 2) {
+        return StackButton(
+          cont: Page2(),
           button: button,
-          n: 4,
-          isUnion: isUnion,
-        ),
-        audiofile: 'a5',
-      );
-    } else if (n == 3) {
-      return StackButton(
-        cont: Page3(),
-        button: button,
-        nextWidget: Slides(
+          nextWidget: Slides(
+            button: button,
+            n: 4,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a5',
+        );
+      } else if (n == 3) {
+        return StackButton(
+          cont: Page3(),
           button: button,
-          n: 6,
-          isUnion: isUnion,
-        ),
-        audiofile: 'a8',
-      );
+          nextWidget: Slides(
+            button: button,
+            n: 6,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a8',
+        );
+      } else {
+        return StackButton(
+          cont: Page4(),
+          button: false,
+          nextWidget: Slide6(),
+          audiofile: 'a10',
+        );
+      }
     } else {
-      return StackButton(
-        cont: Page4(),
-        button: false,
-        nextWidget: Slide6(),
-        audiofile: 'a10',
-      );
+      if (n == 1) {
+        return StackButton(
+          cont: Page1(),
+          button: button,
+          nextWidget: Slides(
+            button: button,
+            n: 2,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a2',
+        );
+      } else if (n == 2) {
+        return StackButton(
+          cont: Page2(),
+          button: button,
+          nextWidget: Slides(
+            button: button,
+            n: 4,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a5',
+        );
+      } else if (n == 3) {
+        return StackButton(
+          cont: Page3(),
+          button: button,
+          nextWidget: Slides(
+            button: button,
+            n: 6,
+            isUnion: isUnion,
+          ),
+          audiofile: 'a8',
+        );
+      } else {
+        return StackButton(
+          cont: Page4(),
+          button: false,
+          nextWidget: Slide6(),
+          audiofile: 'a10',
+        );
+      }
     }
   }
 }
