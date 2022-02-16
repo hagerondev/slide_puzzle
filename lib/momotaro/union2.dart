@@ -20,9 +20,10 @@ class Union2 extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Center(
+          child: SizedBox(
+            height: double.infinity,
             child: Padding(
-              padding: EdgeInsets.all(60),
+              padding: EdgeInsets.only(top: 110),
               child: Page2(),
             ),
           ),

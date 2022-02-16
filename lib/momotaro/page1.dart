@@ -354,7 +354,6 @@ class PuzzleBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('aaaaaaaaa');
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
     //final theme = BlueDashatarTheme();
     final puzzle = context.select((PuzzleBloc bloc) => bloc.state.puzzle);
