@@ -63700,7 +63700,7 @@ J.b1(A.aU(s,!1,t.C),new A.h0(q instanceof A.fq))},
 $S:0}
 A.Lq.prototype={
 C(a,b){var s=null
-return A.bv("assets/images/momotaro/one.png",s,s,s,s,s)}}
+return A.bv("assets/images/momotaro/one.jpg",s,s,s,s,s)}}
 A.zd.prototype={
 C(a,b){var s=null
 return A.bv("assets/images/momotaro/two.png",s,s,s,s,s)}}
