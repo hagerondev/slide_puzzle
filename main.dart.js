@@ -63706,7 +63706,7 @@ C(a,b){var s=null
 return A.bv("assets/images/momotaro/two.png",s,s,s,s,s)}}
 A.Lr.prototype={
 C(a,b){var s=null
-return A.bv("assets/images/momotaro/three.png",s,s,s,s,s)}}
+return A.bv("assets/images/momotaro/three.jpg",s,s,s,s,s)}}
 A.ze.prototype={
 C(a,b){var s=null
 return A.bv("assets/images/momotaro/four.png",s,s,s,s,s)}}
