@@ -11,5 +11,4 @@ import 'package:very_good_slide_puzzle/momotaro/audio.dart';
 
 void main() {
   bootstrap(() => const App()); //Menu());
-  //bootstrap(() => );
 }
