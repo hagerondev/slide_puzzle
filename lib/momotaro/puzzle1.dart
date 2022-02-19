@@ -8,7 +8,6 @@ import 'package:very_good_slide_puzzle/dashatar/dashatar.dart';
 import 'package:very_good_slide_puzzle/l10n/l10n.dart';
 import 'package:very_good_slide_puzzle/layout/layout.dart';
 import 'package:very_good_slide_puzzle/models/models.dart';
-import 'package:very_good_slide_puzzle/momotaro/puzzle2.dart';
 import 'package:very_good_slide_puzzle/momotaro/union2.dart';
 import 'package:very_good_slide_puzzle/puzzle/puzzle.dart';
 import 'package:very_good_slide_puzzle/simple/simple.dart';
@@ -34,15 +33,7 @@ class Page1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //return const PuzzleBoard();
-    return Container(
-      decoration: BoxDecoration(
-          // border: Border.all(
-          //   color: Colors.orangeAccent,
-          //   width: 30,
-          // ),
-          ),
-      child: PuzzlePage(),
-    );
+    return const PuzzlePage();
   }
 }
 
@@ -150,7 +141,7 @@ class PuzzleView extends StatelessWidget {
                   ),
               ),
             ],
-            child: Center(
+            child: const Center(
               child: _Puzzle(
                 key: Key('puzzle_view_puzzle'),
               ),
@@ -397,11 +388,7 @@ class PuzzleBoard extends StatelessWidget {
           size,
           puzzle.tiles
               .map(
-                (tile) =>
-
-                    // decoration: BoxDecoration(
-                    //     border: Border.all(color: Colors.lightGreen)),
-                    _PuzzleTile(
+                (tile) => _PuzzleTile(
                   key: Key('puzzle_tile_${tile.value.toString()}'),
                   tile: tile,
                 ),

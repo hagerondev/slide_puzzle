@@ -204,7 +204,7 @@ class PuzzleHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 96,
+      height: 0,
       child: ResponsiveLayoutBuilder(
         small: (context, child) => Stack(
           children: [
@@ -312,24 +312,18 @@ class PuzzleSections extends StatelessWidget {
           theme.layoutDelegate.endSectionBuilder(state),
         ],
       ),
-      medium: (context, child) => Column(
-        children: [
-          theme.layoutDelegate.startSectionBuilder(state),
-          const PuzzleBoard(),
-          theme.layoutDelegate.endSectionBuilder(state),
-        ],
-      ),
-      large: (context, child) => Center(
-        child: PuzzleBoard(),
-        // child: Row(
-        //   crossAxisAlignment: CrossAxisAlignment.start,
-        //   children: [
-        //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
-        //     const PuzzleBoard(),
-        //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
-        //   ],
-        // ),
-      ),
+      medium: (context, child) => PuzzleBoard(),
+      large: (context, child) => PuzzleBoard(),
+
+      // child: Row(
+      //   crossAxisAlignment: CrossAxisAlignment.start,
+      //   children: [
+      //     Expanded(child: theme.layoutDelegate.startSectionBuilder(state)),
+      //     const PuzzleBoard(),
+      //     Expanded(child: theme.layoutDelegate.endSectionBuilder(state)),
+      //   ],
+      // ),
+
       //  Row(
       //   crossAxisAlignment: CrossAxisAlignment.start,
       //   children: [
@@ -370,7 +364,6 @@ class PuzzleBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('aaaaaaaaa');
     final theme = context.select((ThemeBloc bloc) => bloc.state.theme);
     //final theme = BlueDashatarTheme();
     final puzzle = context.select((PuzzleBloc bloc) => bloc.state.puzzle);
@@ -499,7 +492,7 @@ class PuzzleMenuItem extends StatelessWidget {
         children: [
           Container(
             width: 100,
-            height: 40,
+            height: 0,
             decoration: isCurrentTheme
                 ? BoxDecoration(
                     border: Border(
