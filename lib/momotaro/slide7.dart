@@ -16,13 +16,7 @@ class Page4 extends StatelessWidget {
   Widget build(BuildContext context) {
     //return const PuzzleBoard();
     return Center(
-      child: Text(
-        'END',
-        style: TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
-        ),
-      ),
+      child: Image.asset('assets/images/momotaro/end.png'),
     );
   }
 }
