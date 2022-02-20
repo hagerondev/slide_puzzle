@@ -12,6 +12,8 @@ A slide puzzle built for [Flutter Challenge](https://flutterhack.devpost.com/).
 
 This is an educational puzzle game. It is an application that reads a Japanese folktale called Momotaro, and puzzles appear at key points in the folktale. By solving the puzzles, the user can continue the story. This is a great way for children to develop their linguistic skills through exposure to English, and their mathematical skills through puzzle solving.
 
+You can try [here](https://puzzle.hageron.com/).
+
 ## developer
 - [hagerondev](https://github.com/hagerondev)
 - [NyatsuYAI](https://github.com/NyatsuYAI)
