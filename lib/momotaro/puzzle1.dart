@@ -81,7 +81,7 @@ class PuzzlePage extends StatelessWidget {
       child: Column(
         children: [
           SizedBox(
-            height: 150,
+            height: 100,
           ),
           Expanded(
             child: Container(
